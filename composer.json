@@ -1,0 +1,14 @@
+{
+    "name": "goosestudio/custom-multisite-path",
+    "description": "This is a (MU-)plugin that fixes the paths for when you have WordPress in a subfolder and want MultiSite. Edit",
+    "type": "wordpress-plugin",
+    "license": "GPLv2.0",
+    "authors": [
+        {
+            "name": "Andreas Nurbo",
+            "email": "andreas@goose.studio"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {}
+}
