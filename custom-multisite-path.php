@@ -61,3 +61,14 @@ add_filter( 'admin_url', function ( $url ) {
     }
     return '/' . CMSP_WP_PATH . "/$url";
 }, 0, 1 );
+
+/**
+ * Add path to include urls if missing. These calls use relative paths and thereby are not handled by the other filters.
+ */
+add_filter( 'includes_url', function ( $url ) {
+    $parsed_url = parse_url( $url );
+    if (isset($parsed_url['host'])) {
+        return $url;
+    }
+    return '/' . CMSP_WP_PATH . "/$url";
+}, 0, 1 );
