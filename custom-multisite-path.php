@@ -64,7 +64,7 @@ add_filter( 'admin_url', function ( $url ) {
     if (strpos($url, '/' . CMSP_WP_PATH . '/') ===0) {
         return $url;
     }
-
+    $url = ltrim($url, '/');
     return '/' . CMSP_WP_PATH . "/$url";
 }, 0, 1 );
 
@@ -76,5 +76,6 @@ add_filter( 'includes_url', function ( $url ) {
     if (isset($parsed_url['host'])) {
         return $url;
     }
+    $url = ltrim($url, '/');
     return '/' . CMSP_WP_PATH . "/$url";
 }, 0, 1 );
