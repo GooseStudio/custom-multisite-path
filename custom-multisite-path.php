@@ -56,9 +56,15 @@ add_filter( 'site_url', function ( $url, $path, $scheme ) {
  */
 add_filter( 'admin_url', function ( $url ) {
     $parsed_url = parse_url( $url );
+
     if (isset($parsed_url['host'])) {
         return $url;
     }
+
+    if (strpos($url, '/' . CMSP_WP_PATH . '/') ===0) {
+        return $url;
+    }
+
     return '/' . CMSP_WP_PATH . "/$url";
 }, 0, 1 );
 
